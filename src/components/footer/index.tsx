@@ -45,21 +45,17 @@ const Footer: React.FC = () => {
                         개인정보처리방침
                     </NavLink>
                 </NavLinks>
-                <CompanyName>시그마인</CompanyName>
+                <CompanyName>주식회사 시그마인</CompanyName>
                 <InfoSection>
                     <InfoColumn>
                         <InfoText>대표자명: 안대철</InfoText>
-                        <InfoText>사업자등록번호 : 170-55-00823</InfoText>
-                        <InfoText>
-                            통신판매업 신고번호 : 제 2024-용인수지-0698 호
-                        </InfoText>
+                        <InfoText>사업자등록번호 : 738-81-03440</InfoText>
                     </InfoColumn>
                     <InfoColumn>
                         <InfoText>
-                            사업장 주소: 경기도 안성시 석정2길 13-8, 102-404
+                            사업장 주소 : 경기도 성남시 분당구 판교로289번길 20, 3동 1층 7호
                         </InfoText>
-                        <InfoText>고객센터: 010-5675-1056</InfoText>
-                        <InfoText>이메일: yoonkwonai@gmail.com</InfoText>
+                        <InfoText>유선번호 : 070-4533-7094</InfoText>
                     </InfoColumn>
                 </InfoSection>
             </ContentWrap>
