@@ -11,7 +11,7 @@ frontend:
 
         build:
             commands:
-                - yarn install --frozen-lockfile
+                - yarn install --immutable
                 - |
                     if [ "$APP_ENV" = "production" ]; then
                       echo "Building for production..."

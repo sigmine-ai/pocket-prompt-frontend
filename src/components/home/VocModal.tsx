@@ -60,11 +60,11 @@ export default function VocModal({ isOpen, onClose }: VocModalProps) {
                 </Text>
 
                 <Flex vertical align="center">
-                    <Text font="p3_14_med" color="G_700">
+                    <Text font="b3_14_med" color="G_700">
                         추가되었으면 하는 기능이나 불편한 점이 있다면 자유롭게
                         말씀해주세요!
                     </Text>
-                    <Text font="p3_14_med" color="G_700">
+                    <Text font="b3_14_med" color="G_700">
                         여러분들의 소중한 의견을 듣고 적극 반영하겠습니다 :)
                     </Text>
                 </Flex>

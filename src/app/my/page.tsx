@@ -204,7 +204,7 @@ const MyPage = () => {
                                 계정
                             </Text>
                             <Email>
-                                <Text font="b1_14_reg" color="G_300">
+                                <Text font="b3_14_reg" color="G_300">
                                     {userData.user?.email}
                                 </Text>
                             </Email>

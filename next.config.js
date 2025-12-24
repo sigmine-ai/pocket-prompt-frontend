@@ -5,7 +5,7 @@ const path = require("path");
 const envFilePath = path.resolve(
     __dirname,
     "pocket-prompt-frontend-next-envs/.env.next." +
-        (process.env.APP_ENV || process.env.NODE_ENV || "development")
+    (process.env.APP_ENV || process.env.NODE_ENV || "development")
 );
 
 // .env 파일 로드
@@ -18,6 +18,11 @@ const nextConfig = {
     },
     reactStrictMode: true,
     swcMinify: true,
+    eslint: {
+        // ESLint 9 Flat Config와 Next.js 내장 ESLint 통합 간의 호환성 문제로 인해
+        // 빌드 시 ESLint를 무시합니다. 별도로 `yarn lint`를 실행하세요.
+        ignoreDuringBuilds: true,
+    },
     images: {
         formats: ["image/avif", "image/webp"],
         remotePatterns: [

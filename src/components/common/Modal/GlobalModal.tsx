@@ -11,7 +11,6 @@ const GlobalModal = () => {
             title={modalData.title}
             open={modalData.isOpen}
             onOk={modalData.callBack}
-            onClose={closeModal}
             onCancel={closeModal}
             footer={modalData.footer}
         >
