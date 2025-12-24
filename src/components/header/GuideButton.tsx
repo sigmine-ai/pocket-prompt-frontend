@@ -18,7 +18,7 @@ const GuideButton = () => {
             hierarchy="normal"
             style={{ padding: "8px 8px 8px 12px" }}
         >
-            <Text font="b3_14_semi " color="primary">
+            <Text font="b3_14_semi" color="primary">
                 Guide
             </Text>
             <Icon name="Book" />

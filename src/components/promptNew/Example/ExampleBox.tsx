@@ -1,11 +1,15 @@
 import Text from "@/components/common/Text/Text";
 import styled from "styled-components";
+import theme from "@/styles/theme";
+
+type FontKey = keyof typeof theme.fonts;
+type ColorKey = keyof typeof theme.colors;
 
 interface ExampleBoxProps {
     defaultValue: string;
     value?: string;
-    font?: string;
-    color?: string;
+    font?: FontKey;
+    color?: ColorKey;
 }
 export default function ExampleBox({
     defaultValue,
@@ -22,8 +26,8 @@ export default function ExampleBox({
 
     return (
         <ExampleText
-            font={font ? font : "b3_14_reg"}
-            color={color ? color : "G_700"}
+            font={font ?? "b3_14_reg"}
+            color={color ?? "G_700"}
         >
             {value}
         </ExampleText>

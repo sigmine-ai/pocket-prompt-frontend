@@ -3,10 +3,14 @@
 import { HTMLAttributes, PropsWithChildren } from "react";
 import ReactMarkdown from "react-markdown";
 import styled from "styled-components";
+import theme from "@/styles/theme";
+
+type FontKey = keyof typeof theme.fonts;
+type ColorKey = keyof typeof theme.colors;
 
 interface TextProps extends HTMLAttributes<HTMLDivElement> {
-    font: string;
-    color?: string;
+    font: FontKey;
+    color?: ColorKey;
     markdown?: boolean;
 }
 export default function Text({
@@ -37,8 +41,8 @@ export default function Text({
 }
 
 const StyledText = styled.div<{
-    $font: string;
-    $color: string;
+    $font: FontKey;
+    $color: ColorKey;
     $hasEvent: boolean;
 }>`
     ${({ theme, $font }) => theme.fonts[$font]};
