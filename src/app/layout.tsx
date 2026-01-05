@@ -12,9 +12,7 @@ import localFont from "next/font/local";
 import { headers } from "next/headers";
 import Script from "next/script";
 import "./globals.css";
-
-const webUrl = process.env.NEXT_PUBLIC_WEB_URL || "http://localhost:3000";
-const isProduction = process.env.APP_ENV === "production";
+import { isProduction, webUrl } from "@/config/env";
 
 const pretendard = localFont({
     src: "../fonts/PretendardVariable.woff2",

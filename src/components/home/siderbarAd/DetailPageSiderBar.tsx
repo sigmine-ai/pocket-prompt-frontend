@@ -1,6 +1,5 @@
 import Script from "next/script";
-
-const isProduction = process.env.APP_ENV === "production";
+import { isProduction } from "@/config/env";
 
 export default function DetailPageSiderBar() {
     if (!isProduction) {
