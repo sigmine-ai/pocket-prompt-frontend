@@ -16,6 +16,8 @@ import { useDeviceSize } from "@components/DeviceContext";
 import { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
 import styled from "styled-components";
+import Button from "@/components/common/Button/Button";
+import { useRouter } from "next/navigation";
 
 export default function SavedPromptPage() {
     const { isUnderTablet } = useDeviceSize();
@@ -30,7 +32,8 @@ export default function SavedPromptPage() {
         searchedCategoryState
     );
 
-    const { handleSearch, searchResults, isLoading } = useSearch(activeTab);
+    const { handleSearch, searchResults, isLoading, isUnauthorized } = useSearch(activeTab);
+    const router = useRouter();
 
     useEffect(() => {
         setIsInitialized(true);
@@ -43,6 +46,36 @@ export default function SavedPromptPage() {
 
     if (!isInitialized) {
         return null;
+    }
+
+    // 401 에러 시 로그인 안내 화면
+    if (isUnauthorized || !userData.isLogin) {
+        return (
+            <HomeWrapper>
+                <HomeContentWrapper $isUnderTablet={isUnderTablet}>
+                    <HomeLnb initialMenu="4" />
+                    <ContentWrapper>
+                        <LoginRequiredWrapper>
+                            <Text font="h1_24_bold" color="grey_700">
+                                🔐 로그인이 필요합니다
+                            </Text>
+                            <Text font="b1_18_reg" color="grey_500" style={{ marginTop: 12 }}>
+                                저장한 프롬프트를 보려면 로그인해 주세요.
+                            </Text>
+                            <Button
+                                onClick={() => router.push("/")}
+                                size={44}
+                                style={{ marginTop: 24 }}
+                            >
+                                <Text font="b2_16_semi" color="white">
+                                    홈으로 이동
+                                </Text>
+                            </Button>
+                        </LoginRequiredWrapper>
+                    </ContentWrapper>
+                </HomeContentWrapper>
+            </HomeWrapper>
+        );
     }
 
     const onChangeKeyword = (value: string) => {
@@ -159,4 +192,12 @@ const TitileWrap = styled.div`
     width: 100%;
     margin-bottom: 20px;
     gap: 5px;
+`;
+
+const LoginRequiredWrapper = styled.div`
+    ${({ theme }) => theme.mixins.flexBox("column", "center", "center")};
+    width: 100%;
+    min-height: 400px;
+    padding: 40px;
+    text-align: center;
 `;

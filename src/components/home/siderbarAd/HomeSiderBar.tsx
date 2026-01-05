@@ -1,6 +1,11 @@
 import Script from "next/script";
+import { isProduction } from "@/config/env";
 
 export default function HomeSiderBar() {
+    if (!isProduction) {
+        return null;
+    }
+
     return (
         <div>
             {/* 광고 마크업 */}
