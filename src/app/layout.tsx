@@ -14,6 +14,7 @@ import Script from "next/script";
 import "./globals.css";
 
 const webUrl = process.env.NEXT_PUBLIC_WEB_URL || "http://localhost:3000";
+const isProduction = process.env.APP_ENV === "production";
 
 const pretendard = localFont({
     src: "../fonts/PretendardVariable.woff2",
@@ -78,11 +79,13 @@ export default function RootLayout({
                         name="viewport"
                         content="width=device-width, initial-scale=1"
                     />
-                    <Script
-                        strategy="afterInteractive"
-                        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3373210774302054"
-                        crossOrigin="anonymous"
-                    />
+                    {isProduction && (
+                        <Script
+                            strategy="afterInteractive"
+                            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3373210774302054"
+                            crossOrigin="anonymous"
+                        />
+                    )}
                     {/* Naver Search Advisor */}
                     <meta
                         name="naver-site-verification"

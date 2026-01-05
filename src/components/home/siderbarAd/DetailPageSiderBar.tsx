@@ -1,6 +1,12 @@
 import Script from "next/script";
 
+const isProduction = process.env.APP_ENV === "production";
+
 export default function DetailPageSiderBar() {
+    if (!isProduction) {
+        return null;
+    }
+
     return (
         <div>
             {/* 광고 마크업 */}
