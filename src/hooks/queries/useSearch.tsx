@@ -1,5 +1,6 @@
 "use client";
 
+import { isAxiosError } from "axios";
 import { getPromptsList } from "@/apis/prompt/prompt";
 import type { PromptDetails } from "@/apis/prompt/prompt.model";
 import {
@@ -96,7 +97,7 @@ export const useSearch = (promptType: "text" | "image") => {
                 if (mounted) {
                     setSearchResults([]);
                     // 401 에러 감지
-                    if (error?.response?.status === 401 || error?.message?.includes('401')) {
+                    if (isAxiosError(error) && error.response?.status === 401) {
                         setIsUnauthorized(true);
                     }
                 }
