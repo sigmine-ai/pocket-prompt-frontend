@@ -1,5 +1,6 @@
 "use client";
 
+import { isAxiosError } from "axios";
 import { getPromptsList } from "@/apis/prompt/prompt";
 import type { PromptDetails } from "@/apis/prompt/prompt.model";
 import {
@@ -32,6 +33,7 @@ export const useSearch = (promptType: "text" | "image") => {
     >(undefined);
     const [isLoading, setIsLoading] = useState(false);
     const [isInitialized, setIsInitialized] = useState(false);
+    const [isUnauthorized, setIsUnauthorized] = useState(false);
 
     // 새로고침 감지 플래그
     const initializedRef = useRef(false);
@@ -88,10 +90,17 @@ export const useSearch = (promptType: "text" | "image") => {
                         (item) => item.type === promptType
                     );
                     setSearchResults(filteredResults);
+                    setIsUnauthorized(false);
                 }
             })
-            .catch(() => {
-                if (mounted) setSearchResults([]);
+            .catch((error) => {
+                if (mounted) {
+                    setSearchResults([]);
+                    // 401 에러 감지
+                    if (isAxiosError(error) && error.response?.status === 401) {
+                        setIsUnauthorized(true);
+                    }
+                }
             })
             .finally(() => {
                 if (mounted) setIsLoading(false);
@@ -126,5 +135,6 @@ export const useSearch = (promptType: "text" | "image") => {
         promptType,
         isLoading,
         isInitialized,
+        isUnauthorized,
     };
 };

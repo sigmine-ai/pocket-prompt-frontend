@@ -17,7 +17,7 @@ export const getPromptsList = async (
     } catch (error) {
         if (error instanceof AxiosError) {
             console.error("Network error:", error.message);
-            throw new Error("Failed to fetch prompts data");
+            throw error;
         } else {
             throw error;
         }
@@ -31,7 +31,7 @@ export const getPrompt = async (id: string): Promise<PromptDetails> => {
     } catch (error) {
         if (error instanceof AxiosError) {
             console.error("Network error:", error.message);
-            throw new Error("Failed to fetch prompt data");
+            throw error;
         } else {
             throw error;
         }
