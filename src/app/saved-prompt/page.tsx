@@ -56,10 +56,10 @@ export default function SavedPromptPage() {
                     <HomeLnb initialMenu="4" />
                     <ContentWrapper>
                         <LoginRequiredWrapper>
-                            <Text font="h1_24_bold" color="grey_700">
+                            <Text font="h1_24_bold" color="G_700">
                                 🔐 로그인이 필요합니다
                             </Text>
-                            <Text font="b1_18_reg" color="grey_500" style={{ marginTop: 12 }}>
+                            <Text font="b1_18_reg" color="G_500" style={{ marginTop: 12 }}>
                                 저장한 프롬프트를 보려면 로그인해 주세요.
                             </Text>
                             <Button
