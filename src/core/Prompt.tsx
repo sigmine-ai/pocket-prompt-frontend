@@ -81,6 +81,7 @@ export const ImgAIPlatforms = {
     ImageFX: "ImageFX",
     Midjourney: "Midjourney",
     Flux: "Flux",
+    NanoBanana: "Nano Banana",
 };
 
 export const PocketRunModel: Record<
