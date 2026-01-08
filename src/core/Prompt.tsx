@@ -134,6 +134,11 @@ export const PocketRunImageModel: Record<
         label: "dall-e",
         value: "dall-e-3",
     },
+    NanoBanana: {
+        id: "nano-banana-pocket-run-toggle",
+        label: "Nano Banana",
+        value: "nano-banana",
+    },
 };
 
 export enum InputType {
