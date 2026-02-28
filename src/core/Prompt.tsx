@@ -91,13 +91,13 @@ export const PocketRunModel: Record<
     Basic: {
         id: "based-pocket-run-toggle",
         label: "기본 모델",
-        value: "gpt-4o-mini",
+        value: "openai/gpt-5-nano",
     },
-    ChatGPT: { id: "gpt-pocket-run-toggle", label: "ChatGPT", value: "gpt-4o" },
+    ChatGPT: { id: "gpt-pocket-run-toggle", label: "ChatGPT", value: "openai/gpt-5.1" },
     Claude: {
         id: "claude-pocket-run-toggle",
         label: "Claude",
-        value: "claude-3-7-sonnet-latest",
+        value: "anthropic/claude-sonnet-4.6",
     },
     Perplexity: {
         id: "perplexity-pocket-run-toggle",
