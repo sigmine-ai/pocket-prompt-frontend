@@ -111,29 +111,24 @@ export const PocketRunImageModel: Record<
     { id: string; label: string; value: string }
 > = {
     Basic: {
-        id: "flux-schnell-pocket-run-toggle",
+        id: "flux-2-klein-4b-pocket-run-toggle",
         label: "기본 모델",
-        value: "black-forest-labs/flux-schnell",
+        value: "black-forest-labs/flux.2-klein-4b",
     },
-    // FluxSchnell: {
-    //     id: "flux-schnell-pocket-run-toggle",
-    //     label: "Flux Schnell",
-    //     value: "black-forest-labs/flux-schnell",
-    // },
-    FluxPro: {
-        id: "flux-1-1-pro-pocket-run-toggle",
-        label: "Flux 1.1 Pro",
-        value: "black-forest-labs/flux-1.1-pro",
+    FluxFlex: {
+        id: "flux-2-flex-pocket-run-toggle",
+        label: "flux.2-flex",
+        value: "black-forest-labs/flux.2-flex",
     },
-    Imagen3: {
-        id: "imagen-3-pocket-run-toggle",
-        label: "Imagen 3",
-        value: "google/imagen-3",
+    NanoBanana2: {
+        id: "gemini-3-1-flash-image-preview-pocket-run-toggle",
+        label: "나노바나나2",
+        value: "google/gemini-3.1-flash-image-preview",
     },
-    DallE: {
-        id: "dall-e-3-pocket-run-toggle",
-        label: "dall-e",
-        value: "dall-e-3",
+    GPT5Image: {
+        id: "gpt-5-image-pocket-run-toggle",
+        label: "GPT-5-Image",
+        value: "openai/gpt-5-image",
     },
 };
 
