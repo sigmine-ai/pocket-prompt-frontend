@@ -21,7 +21,7 @@ export const AiRunBox = ({
     onSelect,
 }: AiRunBoxProps) => {
     const [checked, setChecked] = useState<boolean>(false);
-    const [animationKey, setAnimationKey] = useState<number>(0);
+    const [animationKey, setAnimationKey] = useState<number>(1); // 초기값 1로 설정하여 처음 한 번 자동 실행
 
     const {
         data: suggestionData,
