@@ -42,11 +42,11 @@ export const useGetAiSuggestions = (
     return useQuery<{ title: string; description: string }>({
         queryKey: [
             "aiSuggestions",
-            promptTemplateValue,
             suggestionType,
             retryKey,
         ],
         queryFn: () => getAiSuggestion(promptTemplateValue),
-        enabled: !!promptTemplateValue, // promptTemplateValue가 있을 때만 요청
+        enabled: !!promptTemplateValue && retryKey > 0, // retryKey가 0보다 클 때만 요청 (명시적으로 트리거된 경우만)
+        staleTime: Infinity, // 캐시된 데이터를 항상 신선하게 유지 (자동 refetch 방지)
     });
 };
